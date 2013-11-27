@@ -1,0 +1,319 @@
+<!doctype>
+<html>
+<meta http-equiv="cache-control" content="max-age=0" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+<meta http-equiv="pragma" content="no-cache" />
+<head>
+	<title>CyEasyGraph</title>
+	<!--script type="text/javascript" src="jquery-1.10.2.min.js"></script-->
+	<script type="text/javascript" src="CyEasyGraph.js"></script>
+	<style type="text/css">
+		.code{
+			background-color: #EEE;
+			/*width: 800px;*/
+		}
+	</style>
+</head>
+<body>
+<div>
+<h1>Ctrlyati - CyEasyGraph</h1>
+<canvas id="chart" width="800px" height="400px"></canvas>
+<div class="tutor">
+
+<h2>How to use Ctrlyati - CyEasyGraph</h2>
+<p>
+	First of all, you need <em>"CyEasyGraph.js"</em> , you can download it here.<br/>
+	Download : <a href="CyEasyGraph.js" target="_blank">CyEasyGraph.js</a>
+</p>
+<p>
+	To create graph is so simple.<br/>
+	Just create canvas tag with any id, in this example I've create canvas that has <em>"chart"</em> as id.
+	<em>also this canvas can be any size.</em>
+</p>
+<pre class="code">
+	&lt;canvas id="chart" width="1000px" height="400px"&gt;&lt;/canvas&gt;
+</pre>
+
+<p>
+	Then, you must provide us <em>canvas</em> element and <em>config</em> object.<br/>
+	As you can see chart is just to <em>getElementById</em> from <em>document</em>.
+</p>
+
+<pre class="code">
+	var chart = document.getElementById("chart");
+</pre>
+
+<p>
+	Config object is easy to config, all of parameter you must insert is <em>var config={};</em><br/>
+	if you want to config this chart is just insert parameter as below (all of parameter that available is used in this code).
+</p>
+
+<p>If this is config object</p>
+<pre class="code">
+	var config = {};
+</pre>
+<p>the result is</p>
+<canvas id="chart_1" width="400px" height="200px"></canvas>
+<script type="text/javascript">
+	var chart_1 = document.getElementById("chart_1");
+	var config_1 = {};
+	createGraph(config_1,chart_1);
+</script>
+<hr/>
+
+<!-- 2 -->
+<p>You can provide data for this graph as</p>
+<pre class="code">
+	var config = {
+		data : [
+			{key : "0" , value : 300},
+			{key : "1" , value : -10},
+			{key : "2" , value : 30},
+			{key : "3" , value : 300},
+			{key : "4" , value : -10},
+			{key : "5" , value : 30},
+			{key : "6" , value : 300},
+			{key : "7" , value : -10},
+			{key : "8" , value : 30},
+			{key : "9" , value : 300},
+			{key : "10" , value : -10},
+			{key : "11" , value : 30},
+		
+		],
+	};
+</pre>
+<p>the result is</p>
+<canvas id="chart_2" width="400px" height="200px"></canvas>
+<script type="text/javascript">
+	var chart_2 = document.getElementById("chart_2");
+	var config_2 = {
+		data : [
+			{key : "0" , value : 300},
+			{key : "1" , value : -10},
+			{key : "2" , value : 30},
+			{key : "3" , value : 300},
+			{key : "4" , value : -10},
+			{key : "5" , value : 30},
+			{key : "6" , value : 300},
+			{key : "7" , value : -10},
+			{key : "8" , value : 30},
+			{key : "9" , value : 300},
+			{key : "10" , value : -10},
+			{key : "11" , value : 30},
+		
+		],
+	};
+	createGraph(config_2,chart_2);
+</script>
+<hr/>
+
+<!-- 3 -->
+<p>You can also provid us some style parameter</p>
+<pre class="code">
+	var config = {
+		lineColor : 			"#FFF",
+		scaleLineColor : 		"#999",
+		baseScaleLineColor : 		"#000",
+		bgColor : 			"#555",
+
+		font : {
+			family : 	"Calibri",
+			size  : 	10,		//px
+			color : 	"#FFF",
+		},
+
+		data : [
+			{key : "0" , value : 300},
+			{key : "1" , value : -10},
+			{key : "2" , value : 30},
+			{key : "3" , value : 300},
+			{key : "4" , value : -10},
+			{key : "5" , value : 30},
+			{key : "6" , value : 300},
+			{key : "7" , value : -10},
+			{key : "8" , value : 30},
+			{key : "9" , value : 300},
+			{key : "10" , value : -10},
+			{key : "11" , value : 30},
+		
+		],
+	};
+</pre>
+<p>the result is</p>
+<canvas id="chart_3" width="400px" height="200px"></canvas>
+<script type="text/javascript">
+	var chart_3 = document.getElementById("chart_3");
+	var config_3 = {
+		lineColor : 			"#FFF",
+		scaleLineColor : 		"#999",
+		baseScaleLineColor : 		"#000",
+		bgColor : 			"#555",
+
+		font : {
+			family : 	"Calibri",
+			size  : 	10,		//px
+			color : 	"#FFF",
+		},
+
+		data : [
+			{key : "0" , value : 300},
+			{key : "1" , value : -10},
+			{key : "2" , value : 30},
+			{key : "3" , value : 300},
+			{key : "4" , value : -10},
+			{key : "5" , value : 30},
+			{key : "6" , value : 300},
+			{key : "7" , value : -10},
+			{key : "8" , value : 30},
+			{key : "9" , value : 300},
+			{key : "10" , value : -10},
+			{key : "11" , value : 30},
+		
+		],};
+	createGraph(config_3,chart_3);
+</script>
+<hr/>
+
+<p>
+	this is all config you can edit.
+</p>
+
+<pre class="code">
+	var config = {
+		width : 		700,//px
+		height : 		400,//px
+		padding : 		50, //px
+
+		lineColor : 			"#FFF",
+		scaleLineColor : 		"#999",
+		baseScaleLineColor : 		"#000",
+		bgColor : 			"#555",
+
+		
+		font : {
+			family : 	"Calibri",
+			size  : 	10,		//px
+			color : 	"#FFF",
+		},
+		
+
+		xName : 	"Herizontal Scale",
+		yName : 	"Vertical Scale",
+
+		
+		scaleLine : [
+			{key : "0", weight: 0},
+			{key : "1", weight: 1},
+			{key : "2", weight: 2},
+			{key : "3", weight: 3},
+			{key : "4", weight: 4},
+			{key : "5", weight: 5},
+			{key : "6", weight: 6},
+		],
+
+		scaleLineVertical : true,
+
+		herKey : false,
+		
+		data : [
+			{key : "0" , value : 300},
+			{key : "1" , value : -10},
+			{key : "2" , value : 30},
+			{key : "3" , value : 300},
+			{key : "4" , value : -10},
+			{key : "5" , value : 30},
+			{key : "6" , value : 300},
+			{key : "7" , value : -10},
+			{key : "8" , value : 30},
+			{key : "9" , value : 300},
+			{key : "10" , value : -10},
+			{key : "11" , value : 30},
+		
+		],
+	};
+</pre>
+
+<p>
+	after you create config object you just use this config to create line graph.
+</p>
+<pre class="code">
+	createGraph(config, chart);
+</pre>
+<p>
+	Finally you will got full-equiped line graph.
+</p>
+<canvas id="chartx" width="800px" height="400px"></canvas>
+
+</div>
+<hr/>
+<p>
+	Power by @ctrlyati - Oct, 2013
+</p>
+	
+</div>
+<script type="text/javascript">
+	var chart = document.getElementById("chart");
+	var chartx = document.getElementById("chartx");
+
+	var config = {
+		width : 		700,	//px
+		height : 		400,	//px
+		padding : 		50,		//px
+
+		lineColor : 			"#FFF",
+		scaleLineColor : 		"#999",
+		baseScaleLineColor : 	"#000",
+		bgColor : 				"#555",
+
+		
+		font : {
+			family : 	"Calibri",
+			size  : 	10,		//px
+			color : 	"#FFF",
+		},
+		
+
+		xName : 	"Herizontal Scale",
+		yName : 	"Vertical Scale",
+
+		
+		scaleLine : [
+			{key : "0", weight: 0},
+			{key : "1", weight: 1},
+			{key : "2", weight: 2},
+			{key : "3", weight: 3},
+			{key : "4", weight: 4},
+			{key : "5", weight: 5},
+			{key : "6", weight: 6},
+		],
+
+		scaleLineVertical : true,
+
+		herKey : false,
+		
+		data : [
+			{key : "0" , value : 300},
+			{key : "1" , value : -10},
+			{key : "2" , value : 30},
+			{key : "3" , value : 300},
+			{key : "4" , value : -10},
+			{key : "5" , value : 30},
+			{key : "6" , value : 300},
+			{key : "7" , value : -10},
+			{key : "8" , value : 30},
+			{key : "9" , value : 300},
+			{key : "10" , value : -10},
+			{key : "11" , value : 30},
+		
+		],
+	};
+
+	createGraph(config, chart);
+	createGraph(config, chartx);
+
+</script>
+
+</body>
+</html>
