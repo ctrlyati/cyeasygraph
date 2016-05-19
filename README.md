@@ -1,7 +1,7 @@
 CyEasGraph
 ===========
 
-![ScreenShot](http://dev.ctrlyati.in.th/CyEasyGraph/Images/001.PNG)
+![ScreenShot](https://raw.githubusercontent.com/ctrlyati/cyeasygraph/master/Images/001.PNG)
 
 How to use Ctrlyati - CyEasyGraph
 
@@ -24,7 +24,7 @@ If this is config object
 	var config = {};
 the result is
 
-![ScreenShot](http://dev.ctrlyati.in.th/CyEasyGraph/Images/002.PNG)
+![ScreenShot](https://raw.githubusercontent.com/ctrlyati/cyeasygraph/master/Images/002.PNG)
 
 You can provide data for this graph as
 
@@ -47,7 +47,7 @@ You can provide data for this graph as
 	};
 the result is
 
-![ScreenShot](http://dev.ctrlyati.in.th/CyEasyGraph/Images/003.PNG)
+![ScreenShot](https://raw.githubusercontent.com/ctrlyati/cyeasygraph/master/Images/003.PNG)
 
 You can also provid us some style parameter
 
@@ -81,7 +81,7 @@ You can also provid us some style parameter
 	};
 the result is
 
-![ScreenShot](http://dev.ctrlyati.in.th/CyEasyGraph/Images/004.PNG)
+![ScreenShot](https://raw.githubusercontent.com/ctrlyati/cyeasygraph/master/Images/004.PNG)
 
 this is all config you can edit.
 
@@ -142,6 +142,6 @@ after you create config object you just use this config to create line graph.
 	createGraph(config, chart);
 Finally you will got full-equiped line graph.
 
-![ScreenShot](http://dev.ctrlyati.in.th/CyEasyGraph/Images/005.PNG)
+![ScreenShot](https://raw.githubusercontent.com/ctrlyati/cyeasygraph/master/Images/005.PNG)
 
 Power by @ctrlyati - Oct, 2013
