@@ -10,7 +10,6 @@ function createGraph(config_object, canvas_object){
 	let herKey = true;
 
 	if(config.herKey==false){
-		//console.log(herKey +"-"+ config.herKey);
 		herKey = config.herKey;
 	}
 
@@ -92,13 +91,10 @@ function createGraph(config_object, canvas_object){
 			min_base = d.value;
 		}
 	}
-	//console.log("MIN,MAX - "+min_base+", "+max_base);
 
 	
 	sx = (width-padding*2)/(data.length-1);
 	sy = (height-padding*2)/(max_base-min_base);
-
-	//console.log("Scale - "+sx+","+sy);
 
 
 	//DRAW BACKGROUND
@@ -150,7 +146,6 @@ function createGraph(config_object, canvas_object){
 	//DRAW SCALE BASE LINE
 	//////////////////////
 	context.strokeStyle = baseScaleLineColor;
-	//context.strokeRect(padding,padding,width-padding, height-padding);
 	context.beginPath();
 	context.moveTo(padding, padding);
 	context.lineTo(padding, height-padding);
@@ -187,7 +182,6 @@ function createGraph(config_object, canvas_object){
 	}
 	for(let i=0; i<data.length; i++){
 		context.lineTo(i*sx+padding,(height-padding)-sy*(data[i].value-min_base));
-		//console.log("DRAW TO ("+i+","+data[i].value+") - "+(i*sx+padding)+","+((height-padding)-sy*(data[i].value-min_base)));
 		if(data[i].key){
 			context.textAlign = "center";
 			if(herKey){
