@@ -144,4 +144,14 @@ Finally you will got full-equiped line graph.
 
 ![ScreenShot](https://raw.githubusercontent.com/ctrlyati/cyeasygraph/master/Images/005.PNG)
 
+## Project Updates
+
+This project is currently undergoing modernization efforts to update its codebase to more current JavaScript standards. These changes are being developed in the `feature/project-update` branch.
+
+Key updates include:
+- Refactoring the JavaScript in `CyEasyGraph.js` to use strict mode (`'use strict';`).
+- Replacing `var` declarations with `let` and `const` for improved variable scoping and immutability.
+
+These changes aim to make the code more robust and maintainable while preserving its original functionality.
+
 Power by @ctrlyati - Oct, 2013

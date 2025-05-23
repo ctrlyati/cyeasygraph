@@ -1,33 +1,34 @@
+'use strict';
 function createGraph(config_object, canvas_object){
 
-	var config = config_object;
-	var padding = 50;
+	const config = config_object;
+	let padding = 50;
 	if(config.padding){
 		padding = config.padding;
 	}
 
-	var herKey = true;
+	let herKey = true;
 
 	if(config.herKey==false){
 		//console.log(herKey +"-"+ config.herKey);
 		herKey = config.herKey;
 	}
 
-	var scaleLine = []
+	let scaleLine = []
 	if(config.scaleLine){
 		scaleLine = config.scaleLine;
 	}
 
-	var scaleLineVertical = false;
+	let scaleLineVertical = false;
 	if(config.scaleLineVertical){
 		scaleLineVertical = config.scaleLineVertical;
 	}
 
-	var canvas = canvas_object;
-	var context = canvas.getContext("2d");
+	const canvas = canvas_object;
+	const context = canvas.getContext("2d");
 
-	var width = canvas.width;;
-	var height = canvas.height;
+	let width = canvas.width;;
+	let height = canvas.height;
 	if(config.width){
 		width = config.width;
 	}
@@ -35,10 +36,10 @@ function createGraph(config_object, canvas_object){
 		height = config.height;
 	}
 
-	var lineColor = "#555";
-	var scaleLineColor = "#CCC";
-	var bgColor = "#FFF";
-	var baseScaleLineColor = "#CCC";
+	let lineColor = "#555";
+	let scaleLineColor = "#CCC";
+	let bgColor = "#FFF";
+	let baseScaleLineColor = "#CCC";
 	
 	if(config.lineColor){
 		lineColor = config.lineColor;
@@ -53,7 +54,7 @@ function createGraph(config_object, canvas_object){
 		baseScaleLineColor = config.baseScaleLineColor;
 	}
 
-	var font = {
+	const font = {
 			family : 	"Calibri",
 			size  : 	12,
 			color : 	"#555",
@@ -71,19 +72,19 @@ function createGraph(config_object, canvas_object){
 	}
 
 
-	var max_base = 0;
-	var min_base = 0;
+	let max_base = 0;
+	let min_base = 0;
 
-	var sx = 0;
-	var sy = 0;
+	let sx = 0;
+	let sy = 0;
 
-	var data = [];
+	let data = [];
 	if(config.data){
 		data = config.data;
 	}
 
-	for(var i=0; i<data.length; i++){
-		var d = data[i];
+	for(let i=0; i<data.length; i++){
+		let d = data[i];
 		if(max_base<d.value){
 			max_base = d.value;
 		}
@@ -109,15 +110,15 @@ function createGraph(config_object, canvas_object){
 	//DRAW SCALE LINE HER
 	/////////////////////
 	context.strokeStyle = scaleLineColor;
-	var sumScaleWeight = 0;
-	var sly = 0;
+	let sumScaleWeight = 0;
+	let sly = 0;
 	if(scaleLine.length>0){
-		for (var i = 0; i<scaleLine.length; i++) {
+		for (let i = 0; i<scaleLine.length; i++) {
 			sumScaleWeight += scaleLine[i].weight;
 		}
-		var sly = (height-padding*2)/sumScaleWeight;
-		var sumScaleWeightInterval = 0;
-		for (var i = 0; i<scaleLine.length; i++) {
+		sly = (height-padding*2)/sumScaleWeight;
+		let sumScaleWeightInterval = 0;
+		for (let i = 0; i<scaleLine.length; i++) {
 			context.fillStyle = scaleLineColor;
 			context.beginPath();
 			context.moveTo(padding,
@@ -137,7 +138,7 @@ function createGraph(config_object, canvas_object){
 	//////////////////////////
 	context.strokeStyle = scaleLineColor;
 	if(scaleLineVertical){
-		for (var i = 0; i < data.length; i++) {
+		for (let i = 0; i < data.length; i++) {
 			context.beginPath();
 			context.moveTo((i*sx+padding),padding);
 			context.lineTo((i*sx+padding),height-padding);
@@ -184,7 +185,7 @@ function createGraph(config_object, canvas_object){
 	if(data.length>0){
 		context.moveTo(0*sx+padding,(height-padding)-sy*(data[0].value-min_base));
 	}
-	for(var i=0; i<data.length; i++){
+	for(let i=0; i<data.length; i++){
 		context.lineTo(i*sx+padding,(height-padding)-sy*(data[i].value-min_base));
 		//console.log("DRAW TO ("+i+","+data[i].value+") - "+(i*sx+padding)+","+((height-padding)-sy*(data[i].value-min_base)));
 		if(data[i].key){
